@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Developer</title>
+    <title>My Portfolio | Computer Engineer & Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-brand">DEV<span>x</span>PORTFOLIO</div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#youtube">YouTube</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
         <div class="nav-utils">
-            <a href="#contact" class="btn-outline">HIRE ME</a>
+            <a href="resume.pdf" class="btn-outline" download>RESUME <i class="fa-solid fa-download"></i></a>
+            <a href="#contact" class="btn-outline hire-me">HIRE ME</a>
         </div>
     </nav>
 
@@ -27,8 +39,11 @@
         <div class="hero-content fade-in-section is-visible">
             <p class="mono-text" style="color: #d80032; margin-bottom: 1rem;">// Hello, World.</p>
             <h1>I build software, games, and hardware.</h1>
-            <p class="subtitle">Computer Engineering Student & Developer</p>
-            <a href="#projects" class="btn-primary shop-btn">VIEW MY WORK</a>
+            <p class="subtitle">Computer Engineering Student & Full-Stack Developer</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">VIEW MY WORK</a>
+                <a href="#contact" class="btn-secondary">GET IN TOUCH</a>
+            </div>
         </div>
     </section>
 
@@ -43,18 +58,51 @@
                     <p>I am a Computer Engineering student based in the Philippines with a passion for building things from the ground up. Whether it's coding a mobile application, designing a circuit, or developing a game logic system, I love the process of problem-solving.</p>
                     <br>
                     <p>My goal is to secure an internship or role where I can apply my skills in software engineering, app development, and system design in a real-world environment.</p>
-                    
+
                     <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Core Skills</h3>
-                    <ul class="skills-list">
-                        <li><strong>Web Dev:</strong> HTML, PHP, Bootstrap</li>
-                        <li><strong>App Dev:</strong> Flutter (Dart)</li>
-                        <li><strong>Game Dev:</strong> Godot 4</li>
-                        <li><strong>Hardware:</strong> Arduino, ESP32, KiCad, Assembly (8086)</li>
-                    </ul>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4><i class="fa-solid fa-code"></i> Software</h4>
+                            <ul class="skills-list">
+                                <li><strong>Web Dev:</strong> HTML, PHP, Bootstrap, CSS, JS</li>
+                                <li><strong>App Dev:</strong> Flutter (Dart)</li>
+                                <li><strong>Game Dev:</strong> Godot 4</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fa-solid fa-microchip"></i> Hardware</h4>
+                            <ul class="skills-list">
+                                <li><strong>Embedded:</strong> Arduino, ESP32</li>
+                                <li><strong>Design:</strong> KiCad, Assembly (8086)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-image placeholder-image">
-                    <img src="Profile1.png" alt="Profile Picture">
+                <div class="about-image-container">
+                    <div class="about-image">
+                        <img src="Profile1.png" alt="Profile Picture">
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="content-section fade-in-section" style="background-color: #fafafa;">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Education & Experience</h2>
+                <span class="mono-text">02.</span>
+            </div>
+            <div class="exp-grid">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>B.S. Computer Engineering</h3>
+                        <span class="exp-date">20XX - Present</span>
+                    </div>
+                    <p class="exp-institution">University Name, Philippines</p>
+                    <p class="exp-desc">Focusing on system architecture, embedded systems, and software engineering. Maintaining a strong academic record while pursuing independent development projects.</p>
+                </div>
+                <!-- Add more experience items here as needed -->
             </div>
         </div>
     </section>
@@ -66,18 +114,41 @@
         <div class="products-container">
             <div class="section-header fade-in-section">
                 <h2>Featured Projects</h2>
-                <span class="mono-text">02.</span>
+                <span class="mono-text">03.</span>
             </div>
-            
+
             <div class="product-grid">
+                <!-- Project 1 -->
                 <div class="product-card fade-in-section">
-                    <div class="product-image placeholder-1">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/600x400" alt="UnoDos Project">
                         <a href="#" class="add-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
                     </div>
                     <div class="product-info">
-                        <h3>UnoDos - GWA Calculator(BETA)</h3>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                        <h3>UnoDos - GWA Calculator (BETA)</h3>
                         <p class="project-desc">A mobile app built with Flutter designed for the Play Store to help students track their grades. Built independently to gain production experience.</p>
-                        <span class="current-price">Flutter / VS Code</span>
+                        <span class="current-price">VS Code / Dart</span>
+                    </div>
+                </div>
+
+                <!-- Project Placeholder 2 -->
+                <div class="product-card fade-in-section">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Project Placeholder">
+                        <a href="#" class="add-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <div class="product-info">
+                        <div class="project-tags">
+                            <span class="tag">Godot</span>
+                            <span class="tag">Game Dev</span>
+                        </div>
+                        <h3>Project Name</h3>
+                        <p class="project-desc">A detailed description of your awesome project. Explain the problem you solved and the technology you used.</p>
+                        <span class="current-price">Godot / GDScript</span>
                     </div>
                 </div>
             </div>
@@ -104,6 +175,8 @@
             </div>
         </div>
     </section>
+
+    <a href="#home" id="back-to-top" title="Go to top"><i class="fa-solid fa-arrow-up"></i></a>
 
     <script src="script.js"></script>
 </body>

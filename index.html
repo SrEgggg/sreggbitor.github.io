@@ -1,183 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Computer Engineer & Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Poppins for headings, Inter for body -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eghmar Jay C. Bitor — Computer Engineering student in the Philippines, building mobile apps, games, and hardware. Explore my work and get in touch.">
+  <meta name="theme-color" content="#f5f3ec">
+  <title>Eghmar Bitor — Developer & Creator</title>
+  <link rel="icon" href="pic1favicon.jpg">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css?v=projects-20261014">
+  <script src="script.js?v=projects-20261014" defer></script>
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="nav-brand">DEV<span>x</span>PORTFOLIO</div>
-
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#youtube">YouTube</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <div class="nav-utils">
-            <a href="resume.pdf" class="btn-outline" download>RESUME <i class="fa-solid fa-download"></i></a>
-            <a href="#contact" class="btn-outline hire-me">HIRE ME</a>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <a href="#home" class="brand" aria-label="Bitor, home">bitor<span class="brand-dot">.</span><span class="brand-caption">DEVELOPER & CREATOR</span></a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span></button>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">+</span></button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#projects">Work</a><a href="#about">About</a><a href="#education">Education</a><a href="#achievements">Certificates</a><a href="#youtube">Beyond code</a><a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
     </nav>
-
-    <section id="home" class="hero-dark">
-        <div class="hero-content fade-in-section is-visible">
-            <p class="mono-text" style="color: #d80032; margin-bottom: 1rem;">// Hello, World.</p>
-            <h1>I build software, games, and hardware.</h1>
-            <p class="subtitle">Computer Engineering Student & Full-Stack Developer</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn-primary">VIEW MY WORK</a>
-                <a href="#contact" class="btn-secondary">GET IN TOUCH</a>
-            </div>
-        </div>
+    <div class="reading-progress" aria-hidden="true"></div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-top"><span class="eyebrow">EGHMAR JAY C. BITOR / SrEggg</span><span class="availability"><i aria-hidden="true"></i> Open to opportunities</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy"><h1 id="hero-title">Curious mind.<br>Hands-on <span class="serif">builder.</span></h1><p class="hero-intro">I turn ideas into software, games, and things you can hold. Computer Engineering student, developer, and always a work in progress.</p><div class="hero-actions"><a class="button" href="#projects">Explore my work <span aria-hidden="true">↗</span></a><a class="text-link" href="#about">A little about me <span aria-hidden="true">↓</span></a></div></div>
+        <div class="portrait-card"><span class="portrait-label">THE PERSON BEHIND THE PROJECTS</span><img src="EggProfile.png" width="1080" height="1080" alt="Portrait of Eghmar Bitor" fetchpriority="high"><span class="portrait-star" aria-hidden="true">✳</span><div class="portrait-bottom"><span>Hello, I’m Eghmar.</span><span class="mono">aka SrEggg ↗</span></div></div>
+      </div>
+      <div class="hero-bottom"><span><span class="location-dot" aria-hidden="true">◉</span> Based in the Philippines</span><span class="mono">SOFTWARE · GAMES · HARDWARE</span><a href="#projects" aria-label="Scroll to selected work">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
     </section>
-
-    <section id="about" class="content-section fade-in-section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <span class="mono-text">01.</span>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I am a Computer Engineering student based in the Philippines with a passion for building things from the ground up. Whether it's coding a mobile application, designing a circuit, or developing a game logic system, I love the process of problem-solving.</p>
-                    <br>
-                    <p>My goal is to secure an internship or role where I can apply my skills in software engineering, app development, and system design in a real-world environment.</p>
-
-                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Core Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4><i class="fa-solid fa-code"></i> Software</h4>
-                            <ul class="skills-list">
-                                <li><strong>Web Dev:</strong> HTML, PHP, Bootstrap, CSS, JS</li>
-                                <li><strong>App Dev:</strong> Flutter (Dart)</li>
-                                <li><strong>Game Dev:</strong> Godot 4</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4><i class="fa-solid fa-microchip"></i> Hardware</h4>
-                            <ul class="skills-list">
-                                <li><strong>Embedded:</strong> Arduino, ESP32</li>
-                                <li><strong>Design:</strong> KiCad, Assembly (8086)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image-container">
-                    <div class="about-image">
-                        <img src="Profile1.png" alt="Profile Picture">
-                    </div>
-                </div>
-            </div>
+    <section class="work section wrap" id="projects" aria-labelledby="work-title">
+      <div class="section-heading"><div><p class="eyebrow">SELECTED WORK</p><h2 id="work-title">Ideas, made <span class="serif">real.</span></h2></div><p>A closer look at what I’m building.<br>Learning by doing, one project at a time.</p></div>
+      <div class="gallery-toolbar"><p id="gallery-hint">A collection of builds, experiments, and what’s next.</p><span class="gallery-swipe-hint">SWIPE TO EXPLORE ↔</span></div>
+      <div class="gallery-frame">
+        <div class="gallery-buttons" hidden>
+          <button type="button" class="gallery-prev" aria-label="Previous project" aria-controls="project-gallery"><span aria-hidden="true">←</span></button>
+          <button type="button" class="gallery-next" aria-label="Next project" aria-controls="project-gallery"><span aria-hidden="true">→</span></button>
         </div>
+      <div class="project-gallery" id="project-gallery" role="region" aria-label="Project gallery" aria-describedby="gallery-hint" tabindex="0">
+      <article class="project-card" aria-labelledby="moneyflow-title">
+<figure class="project-art repository-art phone-art"><a href="assets/moneyflow-home.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot"><img src="assets/moneyflow-home.png" alt="MoneyFlow home screen with balances, transactions, and savings goals" loading="lazy"></a><figcaption>Repository widget-test render using synthetic financial records.</figcaption></figure>
+<div class="project-copy"><div class="project-top"><span class="eyebrow">PERSONAL FINANCE</span><span class="badge">GITHUB ONLY</span></div><h3 id="moneyflow-title">MoneyFlow</h3><p class="project-subtitle">Everyday spending.<br>Longer-term goals.</p><p>A Flutter app for manually tracking spending, account balances, and savings goals. Financial records stay locally in SQLite; the app does not connect to banks or move real money.</p><div class="tags"><span>Flutter</span><span>Dart</span><span>SQLite</span></div><details><summary>Behind the project <span aria-hidden="true">+</span></summary><div class="project-details"><p>Record income, expenses, withdrawals, and transfers; plan savings goals; review spending summaries; set budgets and recurring rules; export or restore JSON backups. Recurring rules run when the app starts or when Run Due is used.</p></div></details><p class="release-status">Available on GitHub only. Not yet released on any app store, including Google Play or the Apple App Store.</p><a class="text-link" href="https://github.com/SrEgggg/MoneyFlow_App" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a></div></article>
+      <article class="project-card" aria-labelledby="unodus-title">
+<div class="project-art" aria-label="UNODUS concept illustration, not an app screenshot"><span class="art-caption mono">UNODUS / GWA CALCULATOR</span><div class="orbit orbit-one"></div><div class="app-tile" aria-hidden="true"><span>u.</span><div>UNODUS</div></div><span class="art-foot mono">CONCEPT ILLUSTRATION · NO REPOSITORY SCREENSHOT</span></div>
+<div class="project-copy"><div class="project-top"><span class="eyebrow">ACADEMIC PLANNING</span><span class="badge">GITHUB ONLY</span></div><h3 id="unodus-title">UNODUS</h3><p class="project-subtitle">Your grades.<br>The bigger picture.</p><p>A GWA calculator for tracking subjects, units, and grades across semesters and academic years. The GitHub project is named UnoDOS Calculator.</p><div class="tags"><span>Flutter</span><span>Dart</span><span>SQLite</span><span>Provider</span></div><details><summary>Behind the project <span aria-hidden="true">+</span></summary><div class="project-details"><p>Track cumulative GWA, explore hypothetical grades with the what-if simulator, review academic trends, and export records to CSV. Uses local SQLite storage and Provider for state management.</p></div></details><p class="release-status">Available on GitHub only. Not yet released on any app store, including Google Play or the Apple App Store.</p><a class="text-link" href="https://github.com/SrEgggg/UnoDOS-Calculator" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a></div></article>
+      <article class="project-card" aria-labelledby="melody-title">
+<figure class="project-art repository-art desktop-art"><a href="assets/melody-transcription.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot"><img src="assets/melody-transcription.jpg" alt="MelodyToTab showing a waveform, detected notes, and guitar chord suggestions" loading="lazy"></a><figcaption>Actual app capture from the repository using generated reference audio.</figcaption></figure>
+<div class="project-copy"><div class="project-top"><span class="eyebrow">MUSIC & AUDIO</span><span class="badge">WORKING MVP</span></div><h3 id="melody-title">MelodyToTab</h3><p class="project-subtitle">Hum an idea.<br>Find it on the guitar.</p><p>A local Windows app that turns short, unaccompanied hummed or sung melodies into editable notes, guitar tablature, and suggested chord progressions.</p><div class="tags"><span>C#</span><span>.NET 10</span><span>Windows Forms</span><span>NAudio</span></div><details><summary>Behind the project <span aria-hidden="true">+</span></summary><div class="project-details"><p>Record or import WAV audio, edit notes and fingerings, compare original and synthesized playback, save .mtab projects, and export PDF or melody-only MIDI. Clean single-voice recordings work best; key, rhythm, and chords are estimates to review.</p></div></details><p class="release-status">Working MVP, as described in the repository. Source available on GitHub; no GitHub release was listed when checked on October 14, 2026.</p><a class="text-link" href="https://github.com/SrEgggg/MelodyToTab" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a></div></article>
+      </div>
+      </div>
+      <div class="gallery-footer"><p class="gallery-status" role="status" aria-live="polite" aria-atomic="true"></p><div class="gallery-dots" role="group" aria-label="Choose a project"></div><span class="gallery-footer-note">KEEP EXPLORING <span aria-hidden="true">↗</span></span></div>
     </section>
-
-    <section id="experience" class="content-section fade-in-section" style="background-color: #fafafa;">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Education & Experience</h2>
-                <span class="mono-text">02.</span>
-            </div>
-            <div class="exp-grid">
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <h3>B.S. Computer Engineering</h3>
-                        <span class="exp-date">20XX - Present</span>
-                    </div>
-                    <p class="exp-institution">University Name, Philippines</p>
-                    <p class="exp-desc">Focusing on system architecture, embedded systems, and software engineering. Maintaining a strong academic record while pursuing independent development projects.</p>
-                </div>
-                <!-- Add more experience items here as needed -->
-            </div>
+    <section class="about section" id="about" aria-labelledby="about-title"><div class="wrap"><div class="about-grid"><div><p class="eyebrow">A LITTLE ABOUT ME</p><h2 id="about-title">Built on curiosity.<br>Driven by <span class="serif">doing.</span></h2><div class="about-signature">Eghmar Bitor <span>↗</span></div></div><div class="about-copy"><p class="lead">I like understanding how things work.<br>Then figuring out how to build them.</p><p>I’m Eghmar Jay C. Bitor, a Computer Engineering student based in the Philippines. From a mobile app to a circuit or a game logic system, I enjoy the process of taking an idea apart and bringing it to life.</p><p>I’m looking for an internship or a role where I can contribute, learn from a team, and put my skills in software development and system design to work.</p><a class="text-link" href="#contact">Let’s build something together <span aria-hidden="true">↗</span></a></div></div><div class="skills-grid"><article><span class="skill-icon" aria-hidden="true">&lt;/&gt;</span><h3>Web development</h3><p>HTML · PHP · Bootstrap</p></article><article><span class="skill-icon" aria-hidden="true">▣</span><h3>Mobile apps</h3><p>Flutter · Dart</p></article><article><span class="skill-icon" aria-hidden="true">✳</span><h3>Game development</h3><p>Godot 4 · Game logic</p></article><article><span class="skill-icon" aria-hidden="true">⌘</span><h3>Hardware & systems</h3><p>Arduino · ESP32 · KiCad · 8086 Assembly</p></article></div></div></section>
+    <!-- EDUCATION: Replace the bracketed text with your school, qualification, dates, and highlights. Duplicate an education-entry article for another school. -->
+    <section class="education section wrap" id="education" aria-labelledby="education-title">
+      <div class="section-heading"><div><p class="eyebrow">EDUCATION</p><h2 id="education-title">The foundations<br>of my <span class="serif">journey.</span></h2></div><p>My academic background.<br>More details coming soon.</p></div>
+      <div class="education-layout">
+        <div class="education-note"><span class="education-symbol" aria-hidden="true">↗</span><p>Always a student.<br>Always <span class="serif">building.</span></p><span class="mono">LEARNING / EXPLORING / APPLYING</span></div>
+        <div class="education-timeline">
+          <article class="education-entry"><div class="entry-meta"><span class="eyebrow">COLLEGE</span><span class="placeholder-badge">DETAILS TO COME</span></div><h3>Bachelor of Science in Computer Engineering</h3><p class="institution">Southern Leyte State University</p><p class="entry-dates">2023 — 2027</p><p class="entry-description">[Add your degree details, relevant coursework, and academic highlights here.]</p></article>
+          <article class="education-entry"><div class="entry-meta"><span class="eyebrow">HIGH SCHOOL</span><span class="placeholder-badge">DETAILS TO COME</span></div><h3>Sogod Nation High School</h3><p class="institution">[School name · Strand or program]</p><p class="entry-dates">[Years attended]</p><p class="entry-description">[Add a short description of your earlier education here.]</p></article>
         </div>
+      </div>
     </section>
-
-    <section id="projects" class="new-releases-section">
-        <div class="side-label">
-            <p>Portfolio</p>
-        </div>
-        <div class="products-container">
-            <div class="section-header fade-in-section">
-                <h2>Featured Projects</h2>
-                <span class="mono-text">03.</span>
-            </div>
-
-            <div class="product-grid">
-                <!-- Project 1 -->
-                <div class="product-card fade-in-section">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/600x400" alt="UnoDos Project">
-                        <a href="#" class="add-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                    <div class="product-info">
-                        <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Mobile</span>
-                        </div>
-                        <h3>UnoDos - GWA Calculator (BETA)</h3>
-                        <p class="project-desc">A mobile app built with Flutter designed for the Play Store to help students track their grades. Built independently to gain production experience.</p>
-                        <span class="current-price">VS Code / Dart</span>
-                    </div>
-                </div>
-
-                <!-- Project Placeholder 2 -->
-                <div class="product-card fade-in-section">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/600x400" alt="Project Placeholder">
-                        <a href="#" class="add-btn" title="View Code"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                    <div class="product-info">
-                        <div class="project-tags">
-                            <span class="tag">Godot</span>
-                            <span class="tag">Game Dev</span>
-                        </div>
-                        <h3>Project Name</h3>
-                        <p class="project-desc">A detailed description of your awesome project. Explain the problem you solved and the technology you used.</p>
-                        <span class="current-price">Godot / GDScript</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="youtube" class="hero-light fade-in-section">
-        <div class="hero-content" style="width: 100%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <i class="fa-brands fa-youtube" style="font-size: 4rem; color: #d80032; margin-bottom: 1rem;"></i>
-            <h2>Content Creator</h2>
-            <p style="margin-bottom: 2rem; max-width: 600px; color: #555;">When I'm not coding, I run a gaming YouTube channel focusing on games like Minecraft, Roblox, and horror games. It's a fun way to practice video editing, thumbnail design, and scripting.</p>
-            <a href="https://www.youtube.com/@SrEggg" class="btn-primary" target="_blank" style="background-color: #282828;">VISIT MY CHANNEL</a>
-        </div>
-    </section>
-
-    <section id="contact" class="content-section fade-in-section" style="background-color: #222; color: white;">
-        <div class="section-container" style="text-align: center;">
-            <h2 style="color: white; margin-bottom: 1rem;">Let's Build Something.</h2>
-            <p style="margin-bottom: 2rem; color: #aaa;">I am currently looking for internship opportunities and freelance projects.</p>
-            <div class="social-links">
-                <a href="https://github.com/SrEgggg" target="_blank" style="color: white; font-size: 2rem; margin: 0 1rem;"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/egmhar-jay-bitor-666b873b5/" target="_blank" style="color: white; font-size: 2rem; margin: 0 1rem;"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:sreggg99@gmail.com" target="_blank" style="color: white; font-size: 2rem; margin: 0 1rem;"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <a href="#home" id="back-to-top" title="Go to top"><i class="fa-solid fa-arrow-up"></i></a>
-
-    <script src="script.js"></script>
+    <section class="achievements section" id="achievements" aria-labelledby="achievements-title"><div class="wrap">
+<div class="section-heading"><div><p class="eyebrow">CONTINUING TO LEARN</p><h2 id="achievements-title">Certificates</h2></div><p>Completed courses and hands-on learning.<br>View the original certificates below.</p></div><div class="achievement-grid certificate-grid">
+<article class="achievement-card"><a class="achievement-visual" href="assets/coursera-mailchimp.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Create a website with MailChimp certificate"><img src="assets/coursera-mailchimp.png" alt="Create a website with MailChimp certificate from Coursera" loading="lazy"></a><div class="achievement-content"><span class="placeholder-badge">COMPLETED</span><h3>Create a website with MailChimp</h3><p class="achievement-issuer">Coursera · <time datetime="2026-09-27">September 27, 2026</time></p><a class="text-link" href="assets/coursera-mailchimp.pdf" target="_blank" rel="noopener noreferrer">View certificate (PDF) <span aria-hidden="true">↗</span></a><a class="text-link" href="https://coursera.org/verify/3OWKC82EQ3VF" target="_blank" rel="noopener noreferrer">Verify on Coursera <span aria-hidden="true">↗</span></a></div></article>
+<article class="achievement-card"><a class="achievement-visual" href="assets/sololearn-tech-for-everyone.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Tech for Everyone certificate"><img src="assets/sololearn-tech-for-everyone.png" alt="Tech for Everyone certificate from Sololearn" loading="lazy"></a><div class="achievement-content"><span class="placeholder-badge">COMPLETED</span><h3>Tech for Everyone</h3><p class="achievement-issuer">Sololearn · <time datetime="2026-09-28">September 28, 2026</time></p><a class="text-link" href="assets/sololearn-tech-for-everyone.pdf" target="_blank" rel="noopener noreferrer">View certificate (PDF) <span aria-hidden="true">↗</span></a><p>Certificate CC-8ZMOZ4H1</p></div></article>
+</div></div></section>
+    <section class="creator section wrap" id="youtube" aria-labelledby="creator-title"><div class="creator-art" aria-hidden="true"><span class="mono">OFF THE CLOCK / ON THE RECORD</span><div class="play-mark">▶</div><div class="creator-handle">SrEggg<span>↗</span></div><span class="mono">TECH. GAMES. A LITTLE OF EVERYTHING.</span></div><div class="creator-copy"><p class="eyebrow">BEYOND THE CODE</p><h2 id="creator-title">Same curiosity.<br>Different <span class="serif">canvas.</span></h2><p>When I’m not building, I’m creating. On YouTube, I share tech, personal projects, and gaming—from Minecraft and Roblox to a good horror game.</p><p>It’s my space to experiment with storytelling, video editing, and thumbnail design. And have a little fun along the way.</p><a class="button button-outline" href="https://www.youtube.com/@SrEggg" target="_blank" rel="noopener noreferrer">Meet me on YouTube <span aria-hidden="true">↗</span></a></div></section>
+    <section class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="contact-top"><p class="eyebrow">WHAT’S NEXT?</p><span class="availability"><i aria-hidden="true"></i> Internships · Freelance · Collaboration</span></div><h2 id="contact-title">Good things start<br>with a <span class="serif">hello.</span><span class="contact-arrow" aria-hidden="true">↗</span></h2><div class="contact-bottom"><div><p>Have an idea, an opportunity, or a question?</p><a class="email-link" href="mailto:sreggg99@gmail.com">sreggg99@gmail.com <span aria-hidden="true">↗</span></a><button class="copy-email" type="button">Copy email <span aria-hidden="true">⧉</span></button><span class="copy-status" role="status" aria-live="polite"></span></div><div class="socials"><a href="https://github.com/SrEgggg" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/egmhar-jay-bitor-666b873b5/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.youtube.com/@SrEggg" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div></div></section>
+  </main>
+  <footer class="wrap"><a href="#home" class="brand">bitor<span class="brand-dot">.</span></a><p>© <span id="year">2026</span> Eghmar Jay C. Bitor</p><a href="#home">Back to top ↑</a></footer>
 </body>
 </html>

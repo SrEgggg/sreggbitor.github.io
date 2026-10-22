@@ -21,7 +21,7 @@ document.addEventListener('keydown', event => {
 document.addEventListener('click', event => {
   if (!event.target.closest('.header')) closeMenu();
 });
-window.matchMedia('(min-width: 701px)').addEventListener('change', closeMenu);
+window.matchMedia('(min-width: 851px)').addEventListener('change', closeMenu);
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 const themeButton = document.querySelector('.theme-toggle');
@@ -49,19 +49,6 @@ systemTheme.addEventListener('change', event => {
 });
 
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-const portrait = document.querySelector('.portrait-card');
-portrait.addEventListener('pointermove', event => {
-  if (motionPreference.matches || !finePointer.matches) return;
-  const box = portrait.getBoundingClientRect();
-  const x = (event.clientX - box.left) / box.width - 0.5;
-  const y = (event.clientY - box.top) / box.height - 0.5;
-  portrait.style.transform = `perspective(900px) rotateX(${-y * 7}deg) rotateY(${x * 9}deg) rotate(2deg)`;
-});
-function resetPortrait() { portrait.style.transform = ''; }
-portrait.addEventListener('pointerleave', resetPortrait);
-motionPreference.addEventListener('change', resetPortrait);
-
 if ('IntersectionObserver' in window) {
   const reveal = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -75,29 +62,17 @@ if ('IntersectionObserver' in window) {
 
 const pageSections = [...document.querySelectorAll('main > section[id]')];
 const navLinks = [...navigation.querySelectorAll('a')];
-const progress = document.querySelector('.reading-progress');
-let scrollPending = false;
-function updateScroll() {
-  const max = document.documentElement.scrollHeight - innerHeight;
-  progress.style.transform = `scaleX(${max > 0 ? Math.max(0, Math.min(1, scrollY / max)) : 0})`;
-  let current = pageSections[0];
-  for (const section of pageSections) {
-    if (section.getBoundingClientRect().top <= 150) current = section;
-  }
-  if (max > 0 && scrollY >= max - 2) current = pageSections[pageSections.length - 1];
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === `#${current.id}`) link.setAttribute('aria-current', 'location');
-    else link.removeAttribute('aria-current');
-  });
-  scrollPending = false;
+if ('IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver(entries => {
+    const active = entries.filter(entry => entry.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+    if (!active) return;
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === '#' + active.target.id) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-80px 0px -55% 0px', threshold: 0 });
+  pageSections.forEach(section => sectionObserver.observe(section));
 }
-function scheduleScroll() {
-  if (!scrollPending) { scrollPending = true; requestAnimationFrame(updateScroll); }
-}
-window.addEventListener('scroll', scheduleScroll, { passive: true });
-window.addEventListener('resize', scheduleScroll);
-document.querySelectorAll('details').forEach(detail => detail.addEventListener('toggle', scheduleScroll));
-updateScroll();
 
 const copyButton = document.querySelector('.copy-email');
 const copyStatus = document.querySelector('.copy-status');
@@ -124,6 +99,7 @@ document.querySelector('.gallery-buttons').hidden = projectCards.length < 2;
 const galleryDots = projectCards.map((card, index) => {
   const dot = document.createElement('button');
   dot.type = 'button';
+  dot.textContent = card.dataset.galleryLabel || card.querySelector('h3').textContent;
   dot.setAttribute('aria-label', 'Show ' + card.querySelector('h3').textContent.replace(/[\[\]]/g, ''));
   dot.setAttribute('aria-controls', 'project-gallery');
   dot.addEventListener('click', () => showProject(index));

@@ -117,6 +117,7 @@ function currentProjectIndex() {
   return closest;
 }
 function updateGallery() {
+  if (gallery.classList.contains('show-all')) return;
   const index = currentProjectIndex();
   previousProject.disabled = index === 0;
   nextProject.disabled = index === projectCards.length - 1;
@@ -124,13 +125,17 @@ function updateGallery() {
   galleryDots.forEach((dot, dotIndex) => dot.setAttribute('aria-pressed', String(dotIndex === index)));
 }
 function showProject(index) {
+  if (gallery.classList.contains('show-all')) {
+    projectCards[index].scrollIntoView({ behavior: motionPreference.matches ? 'instant' : 'smooth', block: 'start' });
+    return;
+  }
   index = Math.max(0, Math.min(projectCards.length - 1, index));
   gallery.scrollTo({ left: projectPosition(projectCards[index]), behavior: motionPreference.matches ? 'instant' : 'smooth' });
 }
 previousProject.addEventListener('click', () => showProject(currentProjectIndex() - 1));
 nextProject.addEventListener('click', () => showProject(currentProjectIndex() + 1));
 gallery.addEventListener('keydown', event => {
-  if (event.target !== gallery) return;
+  if (event.target !== gallery || gallery.classList.contains('show-all')) return;
   const keys = { ArrowRight: currentProjectIndex() + 1, ArrowLeft: currentProjectIndex() - 1, Home: 0, End: projectCards.length - 1 };
   if (!(event.key in keys)) return;
   event.preventDefault();
@@ -143,3 +148,22 @@ gallery.addEventListener('scroll', () => {
 }, { passive: true });
 window.addEventListener('resize', updateGallery);
 updateGallery();
+
+// Offer a complete project overview without removing the original horizontal gallery.
+const overviewButton = document.querySelector('.view-all-projects');
+overviewButton.hidden = false;
+overviewButton.addEventListener('click', () => {
+  const expanded = gallery.classList.toggle('show-all');
+  document.querySelector('#projects').classList.toggle('overview-active', expanded);
+  overviewButton.setAttribute('aria-pressed', String(expanded));
+  overviewButton.textContent = expanded ? 'Back to scrolling gallery' : 'View all projects';
+  document.querySelector('.gallery-buttons').hidden = expanded || projectCards.length < 2;
+  document.querySelector('#gallery-hint').textContent = expanded ? 'All four projects are shown below.' : 'Swipe, use the arrows, or choose a project above.';
+  if (expanded) {
+    galleryStatus.textContent = 'Showing all ' + projectCards.length + ' projects';
+    galleryDots.forEach(dot => dot.setAttribute('aria-pressed', 'false'));
+  } else {
+    gallery.scrollTo({left: 0, behavior: 'instant'});
+    updateGallery();
+  }
+});
